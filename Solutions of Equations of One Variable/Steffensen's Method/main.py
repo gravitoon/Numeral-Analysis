@@ -3,13 +3,6 @@
 # p_0, p_1 = g(p_0), p_2 = g(p_1)
 #
 #                   p_n = p_n -  (p_n+1 - pn)^2 / (p_n+2 - 2 p_n+1 + p_n)
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
 
 def func(x):
     return (10/(x+4))**(1/2)
