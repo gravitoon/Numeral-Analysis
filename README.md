@@ -5,7 +5,7 @@ code. Please attribute the algorithms used in the code to the book authors.
 
 The code is this repository is based on the reading of the book
 
-Numerical Analysis
+Numerical Analysis by
 Richard L. Burden, Douglas J. Faires and Annette M. Burden 10e
 
 These are my python code implementations to the algorithms presented in the book. Following 
