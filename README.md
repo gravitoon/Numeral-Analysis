@@ -1,6 +1,6 @@
 # Numerical Analysis 
 
-Copyright (C) 2023 Jose Luis Paredes. All Rights Reserved. You may use, distribute and modify this
+Copyright (C) 2023 Jose Luis Paredes. You may use, distribute and modify this
 code. Please attribute the algorithms used in the code to the book authors. 
 
 The code is this repository is based on the reading of the book
