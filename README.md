@@ -1,8 +1,12 @@
-# Numeral-Analysis
-## Richard L. Burden, Douglas J. Faires and Annette M. Burden 10e
+# Numerical Analysis 
 
 Copyright (C) 2023 Jose Luis Paredes. All Rights Reserved. You may use, distribute and modify this
 code. Please attribute the algorithms used in the code to the book authors. 
+
+The code is this repository is based on the reading of the book
+
+Numerical Analysis
+Richard L. Burden, Douglas J. Faires and Annette M. Burden 10e
 
 These are my python code implementations to the algorithms presented in the book. Following 
 the suggestion in the book for someone who has never formally taken a numerical analysis,
