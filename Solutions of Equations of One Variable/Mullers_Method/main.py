@@ -1,14 +1,14 @@
 # This script uses Muller's method to find the root (real or complex)
-# of a polynomila given three initial approximations
+# of a polynomial given three initial approximations
 #
 # p_n = p_n-1 - 2c / (b + sgn(b) sqrt(b^2 - 4ac))
 #
 # with
 # c = f(p_n-1)
 # b = (p_n-3 - p_n-1)^2 (f(p_n-2) - f(p_n-1)) - (p_n-2 - p_n-1)^2(f(p_n-3) - f(p_n-1)) /
-#                                              ((p_n-3 - p_n-1)(p_n-2 - p_n-1)(p_n-3 - p_n-2))
+#                                          ((p_n-3 - p_n-1)(p_n-2 - p_n-1)(p_n-3 - p_n-2))
 # c = (p_n-2 - p_n-1)^2 (f(p_n-3) - f(p_n-1)) - (p_n-3 - p_n-1)(f(p_n-2) - f(p_n-1)) /
-#                                              ((p_n-3 - p_n-1)(p_n-2 - p_n-1)(p_n-3 - p_n-2))
+#                                          ((p_n-3 - p_n-1)(p_n-2 - p_n-1)(p_n-3 - p_n-2))
 
 #
 # Written by Jose Luis Paredes 09/09/2023
@@ -36,22 +36,18 @@ def muller_method(initial_approx, tolerance = 0.001, max_iter = 20):
         return print("The interval must be list of floating point numbers")
 
     # Defined initial values
-    iter = 3
+    iteration = 3
     p_0 = initial_approx[0]
     p_1 = initial_approx[1]
     p_2 = initial_approx[2]
 
-    h_0 = p_0 - p_1
-    h_1 = p_1 - p_2
-    h_2 = p_0 - p_2
-
-    c = func(p_2)
-    b = ((h_2 ** 2 * (func(p_1) - func(p_2))) - (h_1 ** 2 * (func(p_0) - func(p_2)))) / (h_0 * h_1 * h_2)
-    a = ((h_1 * (func(p_0) - func(p_2))) - (h_2 * (func(p_1) - func(p_2)))) / (h_0 * h_1 * h_2)
-
     print("{0:<2s} {1:^20s} {2:^20s}".format("n","p_i", "f(p_i)"))
 
-    while max_iter >= iter:
+    while max_iter >= iteration:
+        h_0 = p_0 - p_1
+        h_1 = p_1 - p_2
+        h_2 = p_0 - p_2
+
         if h_0 == 0:
             print(f'The points p_0 and p_1 are equal')
             break
@@ -62,6 +58,9 @@ def muller_method(initial_approx, tolerance = 0.001, max_iter = 20):
             print(f'The points p_0 and p_2 are equal')
             break
 
+        c = func(p_2)
+        b = ((h_2 ** 2 * (func(p_1) - func(p_2))) - (h_1 ** 2 * (func(p_0) - func(p_2)))) / (h_0 * h_1 * h_2)
+        a = ((h_1 * (func(p_0) - func(p_2))) - (h_2 * (func(p_1) - func(p_2)))) / (h_0 * h_1 * h_2)
         disc = cm.sqrt(b**2 - 4*a*c)
 
         if abs(b - disc) < abs(b + disc):
@@ -75,26 +74,17 @@ def muller_method(initial_approx, tolerance = 0.001, max_iter = 20):
 
         if abs(h) < tolerance:
             print(f'\n\nThe root is {p}')
-            break
+            return
 
-        print("{0:<2d} {1:^20f} {2:^20f}".format(iter, p, func(p)))
+        print("{0:<2d} {1:^20f} {2:^20f}".format(iteration, p, func(p)))
 
         p_0 = p_1
         p_1 = p_2
         p_2 = p
+        iteration += 1
 
-        h_0 = p_0 - p_1
-        h_1 = p_1 - p_2
-        h_2 = p_0 - p_2
-
-        c = func(p_2)
-        b = ( (h_2**2 * (func(p_1) - func(p_2))) - (h_1**2 * (func(p_0) - func(p_2))) )/ (h_0 * h_1 * h_2)
-        a = ( (h_1 * (func(p_0) - func(p_2))) - (h_2 * (func(p_1) - func(p_2))) )/ (h_0 * h_1 * h_2)
-
-        iter += 1
-
-    if iter > max_iter:
-        print(f"No root was found within the given tolerance after {iter} iterations")
+    if iteration > max_iter:
+        print(f"No root was found within the given tolerance after {iteration} iterations")
 
 if __name__ == '__main__':
     muller_method([0.5, -0.5, 0.0], 0.00001, 20)
