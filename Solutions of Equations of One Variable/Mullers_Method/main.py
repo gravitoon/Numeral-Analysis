@@ -46,7 +46,7 @@ def muller_method(initial_approx, tolerance = 0.001, max_iter = 20):
     h_2 = p_0 - p_2
 
     c = func(p_2)
-    b = ((h_2**2 * (func(p_1) - func(p_2))) - (h_1**2 * (func(p_0)- func(p_2))))/ (h_0 * h_1 * h_2)
+    b = ((h_2 ** 2 * (func(p_1) - func(p_2))) - (h_1 ** 2 * (func(p_0) - func(p_2)))) / (h_0 * h_1 * h_2)
     a = ((h_1 * (func(p_0) - func(p_2))) - (h_2 * (func(p_1) - func(p_2)))) / (h_0 * h_1 * h_2)
 
     print("{0:<2s} {1:^20s} {2:^20s}".format("n","p_i", "f(p_i)"))
@@ -88,8 +88,8 @@ def muller_method(initial_approx, tolerance = 0.001, max_iter = 20):
         h_2 = p_0 - p_2
 
         c = func(p_2)
-        b = (h_2 ** 2 * (func(p_1) - func(p_2)) - h_1 ** 2 * (func(p_0) - func(p_2))) / (h_0 * h_1 * h_2)
-        a = (h_1 * (func(p_0) - func(p_2)) - h_2 * (func(p_1) - func(p_2))) / (h_0 * h_1 * h_2)
+        b = ( (h_2**2 * (func(p_1) - func(p_2))) - (h_1**2 * (func(p_0) - func(p_2))) )/ (h_0 * h_1 * h_2)
+        a = ( (h_1 * (func(p_0) - func(p_2))) - (h_2 * (func(p_1) - func(p_2))) )/ (h_0 * h_1 * h_2)
 
         iter += 1
 
