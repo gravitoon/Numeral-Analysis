@@ -22,12 +22,15 @@ book as part of the solution.
 
 1. The Bisection Method
 	- Bisection Method Code
-1. Fixed Point Iteration
+2. Fixed Point Iteration
 	- Fixed Point Iteration Code
-1. Newton' method and Its Extensions
+3. Newton' method and Its Extensions
     - Newton's Method Code
     - Secant Method Code
     - The Method of False Position Code
-1. Error Analysis for Iterative Methods
-1. Accelerating Convergence
+4. Error Analysis for Iterative Methods
+5. Accelerating Convergence
 	- Steffensen's Method Code
+6. Zeros of Polynomials and Muller's Method
+	- Horner's Method Code
+	- Complex Zeros: Muller's Method Code
